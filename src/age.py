@@ -1,6 +1,8 @@
-import requests
-from datetime import datetime, timedelta
 import os
+from datetime import datetime, timedelta
+
+import requests
+
 import settings
 
 
@@ -19,12 +21,10 @@ def get_age_in_release_date(release_date, birthday):
 
 
 def get_gender(cast):
-    gender = False
-    if cast['gender'] == 2:
-        gender = 'male'
-    elif cast['gender'] == 1:
-        gender = 'female'
-    return gender
+    return {
+        2: 'male',
+        1: 'female',
+    }.get(cast['gender'], False)
 
 
 def get_film_data(film):
