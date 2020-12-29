@@ -6,6 +6,7 @@ import age
 def test_gender():
     assert age.get_gender({'gender': 2}) == 'male'
     assert age.get_gender({'gender': 1}) == 'female'
+    assert age.get_gender({'gender': 0}) is False
 
 
 def test_get_age_in_release_date():
