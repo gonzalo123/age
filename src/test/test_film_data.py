@@ -8,6 +8,7 @@ def test_get_film_data(monkeypatch):
         'release_date': '1999-6-11',
         'title': 'Fake title'
     }
+
     film_credits = {
         'cast': [
             {'gender': 1, 'id': 1, 'name': 'Actress Name'},
@@ -18,6 +19,7 @@ def test_get_film_data(monkeypatch):
     person1 = {
         'birthday': '1964-10-10',
     }
+
     person2 = {
         'birthday': '1967-10-10',
     }
@@ -27,6 +29,7 @@ def test_get_film_data(monkeypatch):
         f"{settings.BASE}/person/1": person1,
         f"{settings.BASE}/person/2": person2,
     }
+
     monkeypatch.setattr(age, "get", lambda url, query=None: fake_responses[url])
 
     data = age.get_film_data(film)

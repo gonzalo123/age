@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 import sys
 
-from src.age import get_data
+from age import get_data
 
 if __name__ == '__main__':
     data = get_data(sys.argv[1:][0])
